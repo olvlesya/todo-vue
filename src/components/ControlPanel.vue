@@ -1,6 +1,7 @@
 <template>
   <div>
     <a-input
+      data-testid="add-todo"
       placeholder="Enter todo"
       v-model="value"
       @keydown.enter="todoCreate()"

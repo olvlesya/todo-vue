@@ -1,6 +1,7 @@
 <template>
   <a-list-item class="list-item" :class="{ completed: completed }">
     <a-button
+      data-test-id="edit-mode"
       type="primary"
       slot="actions"
       shape="circle"
@@ -8,6 +9,7 @@
       @click="editMode = true"
     />
     <a-button
+      data-test-id="delete-todo"
       type="danger"
       slot="actions"
       icon="delete"
@@ -16,6 +18,7 @@
     <a-checkbox :checked="completed" @change="todoComplete()">
       <span v-if="!editMode">{{ text }}</span>
       <a-input
+        data-test-id="edit-todo"
         class="edit-todo"
         v-if="editMode"
         v-model="value"
